@@ -15,8 +15,8 @@ function anagrams(string1, string2) {
     charMap1 = makeCharMap(string1);
     charMap2 = makeCharMap(string2);
 
-    if(string1.length>string2.length){
-        return compareCharMaps(charMap1,charMap2);
+    if(string1.length!=string2.length){
+        return false;
     }
     else{
         return compareCharMaps(charMap2,charMap1);
@@ -40,12 +40,8 @@ function makeCharMap(str){
 }
 function compareCharMaps(map1,map2){
     for(let char in map1){
-        while(map1[char]>0){
-            if(map2[char]==0){
-                return false;
-            }
-            map1[char]--; map2[char]--;
-        }
+        if(map1[char]-map2[char]!=0)
+            return false;
     }
     return true;
 }
