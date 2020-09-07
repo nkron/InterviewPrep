@@ -40,7 +40,7 @@ function makeCharMap(str){
 }
 function compareCharMaps(map1,map2){
     for(let char in map1){
-        if(map1[char]-map2[char]!=0)
+        if(map1[char]!=map2[char])
             return false;
     }
     return true;
